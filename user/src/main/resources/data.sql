@@ -1,0 +1,11 @@
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('1', 'test', 'test', 'test', 'test');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('2', 'Teodor', 'Todorov', 'Tazzmanian', 'tttt');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('3', 'phil', 'bad', 'phil', 'bad');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('4', 'fill', 'gut', 'fill', 'gut');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('5', 'get', 'better', 'get', 'better');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('6', 'be', 'stronger', 'be', 'stronger');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('7', 'strong', 'will', 'strong', 'will');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('8', 'stop', 'slack', 'stop', 'slack');
+INSERT INTO USER_T (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD) VALUES ('9', 'stop', 'slack', 'test', 'test');
+
+
