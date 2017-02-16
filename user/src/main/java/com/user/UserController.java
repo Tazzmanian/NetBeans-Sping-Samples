@@ -43,7 +43,8 @@ public class UserController {
 
     @GetMapping(value = "/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.OK)
-    public User getUser(@PathVariable Long id) {
+    public User getUser(@PathVariable Long id) throws Exception {
+
         return services.getUserById(id);
     }
 

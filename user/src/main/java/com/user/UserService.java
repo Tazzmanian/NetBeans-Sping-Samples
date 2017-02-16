@@ -5,6 +5,7 @@
  */
 package com.user;
 
+import com.exceptions.UserNotFoundException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,8 +28,13 @@ public class UserService {
         return repo.save(user);
     }
 
-    public User getUserById(Long id) {
-        return repo.findById(id);
+    public User getUserById(Long id) throws Exception {
+        User user = repo.findById(id);
+
+        if (user == null) {
+            throw new UserNotFoundException(id);
+        }
+        return user;
     }
 
     public User remove(Long id) {
