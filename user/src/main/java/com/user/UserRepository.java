@@ -49,4 +49,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     public List<User> findByFirstNameContainingOrLastNameContainingOrBirthDateContainingOrEmailContainingOrPhoneContainingOrderByLastNameDescBirthDateDesc(
             String firstName, String lastName, String date, String email, String phone);
+
+    public User findByUsername(String username);
 }

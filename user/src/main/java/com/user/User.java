@@ -12,6 +12,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import lombok.Data;
 import javax.persistence.Entity;
+import com.user.detail.Role;
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -38,4 +42,8 @@ public class User implements Serializable {
 
     @Column(name = "PASSWORD")
     private String password;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ROLE_ID")
+    private Role role;
 }
