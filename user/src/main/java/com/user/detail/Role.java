@@ -8,11 +8,16 @@ package com.user.detail;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.user.User;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import lombok.Data;
 
@@ -36,6 +41,11 @@ public class Role {
     @JsonIgnore
     private List<User> users;
 
-    // ManyToMany
+    // Without EAGER it will not be able perform User.getAuthorities()
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "ROLE_PRIVILEGES", joinColumns = {
+        @JoinColumn(name = "ROLE_ID")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "PRIVILEGE_ID")})
     private List<Privilege> privileges;
 }

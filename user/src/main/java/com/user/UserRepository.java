@@ -19,6 +19,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Works
     public User findById(Long id);
 
+    public User findByUsername(String username);
+
+    public List<User> findByEnabledTrue();
+
+    public List<User> findByEnabledFalse();
+
     // default
     public List<User> findByFirstNameContainingOrLastNameContainingOrBirthDateContainingOrEmailContainingOrPhoneContaining(
             String firstName, String lastName, String date, String email, String phone);
@@ -50,5 +56,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     public List<User> findByFirstNameContainingOrLastNameContainingOrBirthDateContainingOrEmailContainingOrPhoneContainingOrderByLastNameDescBirthDateDesc(
             String firstName, String lastName, String date, String email, String phone);
 
-    public User findByUsername(String username);
 }
